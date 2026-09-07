@@ -1,0 +1,89 @@
+# AffectBridge-UQ performance/paper configuration.
+# The default profile is intentionally stronger than the exploratory v1 run,
+# while remaining practical on a 4 GB NVIDIA laptop GPU because WavLM is frozen
+# and its features are cached once.
+seed: 42
+seeds: [42, 52, 62]
+sample_rate: 16000
+max_audio_seconds: 8.0
+trim_silence: true
+trim_top_db: 35
+segment_tokens: 8
+feature_model: "microsoft/wavlm-base-plus"
+feature_batch_size: 2
+feature_dtype: "float16"
+# Multi-layer SSL statistics usually transfer better across corpora than relying
+# on the final WavLM layer alone. These layers are extracted in one encoder pass.
+feature_layers: [4, 8, 12]
+feature_cache_name: "wavlm_multilayer_segment_stats"
+
+epochs: 24
+batch_size: 64
+learning_rate: 0.0003
+min_learning_rate: 0.000015
+weight_decay: 0.0002
+patience: 6
+warmup_epochs: 2
+label_smoothing: 0.05
+class_weight_power: 0.25
+corpus_class_balance_power: 0.70
+
+adapter_dim: 192
+adapter_heads: 4
+adapter_layers: 2
+dropout: 0.20
+feature_dropout: 0.08
+
+# Hierarchical global + corpus-conditioned prototypes.
+prototype_temperature: 0.16
+prototype_weight: 0.16
+prototype_residual_scale: 0.35
+alignment_weight: 0.08
+prototype_consistency_weight: 0.04
+contrastive_weight: 0.08
+conditional_alignment_weight: 0.05
+
+# Progressive nuisance suppression. Domain and speaker losses are separated so
+# speaker removal cannot dominate the emotion objective.
+domain_adversarial_weight: 0.04
+speaker_adversarial_weight: 0.015
+grl_lambda: 0.15
+
+# Source-only feature-space augmentation. Same-label cross-corpus mixup targets
+# domain generalization; boundary entropy mixup creates pseudo-OOD samples
+# without exposing calm/surprise labels during training.
+cross_corpus_mixup_weight: 0.18
+cross_corpus_mixup_alpha: 0.6
+boundary_entropy_weight: 0.025
+boundary_mixup_alpha: 4.0
+mixup_fraction: 0.50
+
+# Calibration / abstention.
+conformal_alpha: 0.10
+unknown_weight: 0.60
+unknown_score_weights:
+  confidence: 1.00
+  entropy: 0.55
+  prototype_distance: 0.85
+  dispersion: 0.20
+unknown_known_acceptance: 0.98
+
+num_workers: 0
+run_name: "affectbridge_uq_v2"
+resume_completed: true
+max_total_dataset_gb: 5.0
+known_labels: [anger, disgust, fear, happiness, sadness, neutral]
+unknown_labels: [calm, surprise]
+kaggle_datasets:
+  crema_d:
+    handle: "ejlok1/cremad"
+    parser: "crema"
+  ravdess:
+    handle: "uwrfkaggler/ravdess-emotional-speech-audio"
+    parser: "ravdess"
+  tess:
+    handle: "orvile/toronto-emotional-speech-set-tess"
+    parser: "tess"
+  savee:
+    handle: "orvile/surrey-audio-visual-expressed-emotion-savee"
+    parser: "savee"

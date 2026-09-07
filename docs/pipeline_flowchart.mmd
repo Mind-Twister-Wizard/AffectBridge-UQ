@@ -1,0 +1,13 @@
+flowchart LR
+    A[One-click launcher] --> B[Download or reuse Kaggle corpora]
+    B --> C[Audit and harmonize labels]
+    C --> D[Create/reuse stable multi-layer WavLM cache]
+    D --> E[4 LODO target folds]
+    E --> F[Corpus-class balanced source training]
+    F --> G[Three full-model seeds]
+    G --> H[Representative baselines/ablations]
+    H --> I[Source-only temperature + conformal calibration]
+    I --> J[Held-out target evaluation]
+    J --> K[CSV + Markdown paper tables]
+    K --> L[Confusion matrices, calibration, ROC, risk-coverage, architecture]
+    L --> M[final_report.html]

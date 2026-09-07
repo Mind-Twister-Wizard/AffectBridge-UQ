@@ -1,0 +1,26 @@
+flowchart LR
+    A[16-kHz waveform] --> B[Silence trimming]
+    B --> C[Frozen WavLM Base-Plus]
+    C --> D[Layers 4, 8, 12\n8 segment mean + std tokens]
+    D --> E[Dual-scale temporal adapter\ndepthwise conv + Transformer + attention pooling]
+
+    E --> F[Emotion classifier]
+    E --> G[Global emotion prototypes]
+    G --> H[Bounded corpus residual prototypes]
+    E --> I[Progressive corpus adversarial head]
+    E --> J[Progressive speaker adversarial head]
+
+    F --> K[Adaptive classifier-prototype fusion]
+    G --> K
+    H --> K
+
+    D -. same-label / different-corpus .-> L[Cross-corpus feature mixup]
+    L --> K
+    D -. different-label / different-corpus .-> M[Boundary-entropy pseudo-OOD]
+    M --> K
+
+    K --> N[Temperature scaling]
+    N --> O[Classwise conformal prediction set]
+    K --> P[Hybrid shift / unknown score\nconfidence + entropy + prototype distance + dispersion]
+    O --> Q[Auto-accept / prediction set / human review]
+    P --> Q

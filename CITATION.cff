@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the accompanying AffectBridge-UQ book chapter."
+title: "AffectBridge-UQ: Domain-Generalized Cross-Corpus Speech Emotion Recognition with Calibrated Human Deferral for Empathic Machines"
+type: software
+version: 2.1.0
+date-released: 2026-09-07
+license: MIT
+repository-code: "https://github.com/Mind-Twister-Wizard/AffectBridge-UQ"
+url: "https://github.com/Mind-Twister-Wizard/AffectBridge-UQ"
+authors:
+  - given-names: "Alok"
+    family-names: "Raj"
+    email: "alokraj2027@gmail.com"
+    orcid: "https://orcid.org/0009-0003-7870-7065"
+    affiliation: "Yogananda School of AI, Computers and Data Sciences, Shoolini University of Biotechnology and Management Sciences"
+  - given-names: "Bashar Aswad Kokaz"
+    family-names: "Al-Saeedi"
+    email: "basharenas990@gmail.com"
+    affiliation: "Yogananda School of AI, Computers and Data Sciences, Shoolini University of Biotechnology and Management Sciences"
+  - given-names: "Pankaj"
+    family-names: "Vaidya"
+    email: "pankaj.vaidya@shooliniuniversity.com"
+    orcid: "https://orcid.org/0000-0003-1304-630X"
+    affiliation: "Yogananda School of AI, Computers and Data Sciences, Shoolini University of Biotechnology and Management Sciences"
+  - given-names: "Anurag"
+    family-names: "Rana"
+    email: "anuragrana.anu@gmail.com"
+    orcid: "https://orcid.org/0000-0003-0247-8908"
+    affiliation: "Yogananda School of AI, Computers and Data Sciences, Shoolini University of Biotechnology and Management Sciences"
+keywords:
+  - speech emotion recognition
+  - affective computing
+  - cross-corpus learning
+  - domain generalization
+  - WavLM
+  - multi-prototype learning
+  - conformal prediction
+  - uncertainty quantification
+  - selective classification
+  - human deferral
