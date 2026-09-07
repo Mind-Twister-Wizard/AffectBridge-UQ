@@ -345,19 +345,7 @@ with Calibrated Human Deferral for Empathic Machines. Software release v2.1.0.
 https://github.com/Mind-Twister-Wizard/AffectBridge-UQ
 ```
 
----
 
-## Book chapter integration
-
-After this repository is uploaded, the intended public URL is:
-
-**https://github.com/Mind-Twister-Wizard/AffectBridge-UQ**
-
-Recommended text for the Springer chapter:
-
-> **Code availability.** The complete AffectBridge-UQ implementation, configuration files, reproducibility materials, result tables and publication figures are available at https://github.com/Mind-Twister-Wizard/AffectBridge-UQ.
-
-A ready-to-paste version and suggested BibTeX entry are in [`docs/BOOK_CHAPTER_INTEGRATION.md`](docs/BOOK_CHAPTER_INTEGRATION.md).
 
 ---
 
