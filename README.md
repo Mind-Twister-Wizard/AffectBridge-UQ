@@ -23,6 +23,23 @@
 
 ---
 
+## Editorial confirmatory v3-r1 evidence (October 2026)
+
+The revised book-chapter manuscript is based on a **new, corrected evaluation**, which is **not** the v2 development run displayed in the historical [results/](results/README.md) folder. The corrected local experiments used SHA-256-deduplicated source data, independent source model-selection and calibration subsets, four leave-one-corpus-out targets, and seeds 42/52/62. The authors' audited run records contain **12 full-model and 30 paired-ablation runs**.
+
+| Unseen test corpus | Known-emotion macro-F1 (mean ± SD) | Accuracy (mean) | Post-temperature ECE | Empirical set coverage | Semantic-unknown AUROC |
+|---|---:|---:|---:|---:|---:|
+| CREMA-D | 0.3313 ± 0.0669 | 0.3609 | 0.4645 | 0.4113 | N/A |
+| RAVDESS | 0.5359 ± 0.0452 | 0.5513 | 0.2579 | 0.7033 | 0.5696 |
+| SAVEE | 0.5659 ± 0.0227 | 0.5905 | 0.1062 | 0.7500 | 0.4640 |
+| TESS | 0.4084 ± 0.0350 | 0.4579 | 0.3148 | 0.6411 | 0.5346 |
+
+**Unweighted mean known-emotion macro-F1: 0.4604.** Temperature scaling reduced mean ECE, but target-domain set coverage was far below the nominal source-side 0.90; unknown-emotion ranking was near chance, and paired ablations did not show uniformly positive contributions. No human-review user study or human-decision improvement is claimed.
+
+[Corrected experiment protocol, provenance, seed-level metrics and paired ablations](editorial-confirmatory-v3-r1/README.md). The historical top-level `setup_and_run` scripts and `results/` archive are **not** a claim to reproduce the corrected protocol without the separately retained v3-r1 editorial patch. The corrected patch/checkpoints and sample-level audit are preserved by the authors; original audio must be obtained according to dataset licenses. This is a research manuscript under editorial review, **not** a publication acceptance.
+
+---
+
 ## Overview
 
 **AffectBridge-UQ** is a source-only cross-corpus speech emotion recognition (SER) framework designed to expose uncertainty rather than force a single class prediction for every utterance. The implemented DIMAP-C v2 model combines frozen multi-layer WavLM features, a dual-scale temporal adapter, hierarchical global/corpus-residual emotion prototypes, progressive corpus and speaker regularization, source-only calibration, classwise conformal prediction, and a signed shift-risk score.
@@ -254,10 +271,11 @@ The current v2.1 preprocessing code deduplicates mirrored audio before split con
 - [x] Resume support
 - [x] Explicit TESS `ps` / pleasant-surprise parsing
 - [x] Documented signed risk-score definition and source-only thresholding
-- [ ] Confirmatory deduplicated four-fold × three-seed rerun
-- [ ] Disjoint source model-selection and calibration partitions
-- [ ] Matched pre- vs post-temperature-scaling ECE
-- [ ] Paired multi-seed ablations and computational profiling
+- [x] Local confirmatory deduplicated four-fold × three-seed rerun (v3-r1; distinct from archived v2)
+- [x] Disjoint source model-selection and calibration partitions in the local v3-r1 protocol
+- [x] Matched pre- vs post-temperature-scaling ECE in the confirmatory summaries
+- [x] Paired multi-seed ablations for CREMA-D and RAVDESS (local v3-r1)
+- [ ] Independent computational profiling, replication, and public deposition of full confirmatory artifacts
 
 ---
 

@@ -1,0 +1,6 @@
+ablation,crema_d_delta_macro_f1_mean,crema_d_delta_macro_f1_sd,ravdess_delta_macro_f1_mean,ravdess_delta_macro_f1_sd
+no_prototypes,0.0156,0.0230,-0.0098,0.0230
+global_prototype,-0.0071,0.0274,-0.0051,0.0110
+no_domain_adversarial,-0.0146,0.0113,-0.0247,0.0074
+no_speaker_adversarial,0.0025,0.0217,-0.0232,0.0123
+no_cross_corpus_mixup,0.0141,0.0243,-0.0279,0.0309

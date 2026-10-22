@@ -1,4 +1,6 @@
-# Result Artifacts
+> **Read first:** Corrected 2026 editorial confirmatory v3-r1 results are separately documented at [editorial-confirmatory-v3-r1/](../editorial-confirmatory-v3-r1/README.md). This directory retains *historical v2 exploratory results* and is not the evidence used for the corrected chapter tables.
+
+# Historical v2 Development-Run Artifacts
 
 This directory contains curated publication-facing artifacts from the **documented DIMAP-C v2 development run**.
 

@@ -1,0 +1,5 @@
+holdout,n_seeds,accuracy_mean,macro_f1_mean,macro_f1_sd,uar_mean,ece_pre_mean,ece_post_mean,set_coverage_mean,auto_accept_coverage_mean,selective_risk_mean,unknown_auroc_mean,unknown_aupr_mean
+crema_d,3,0.3609,0.3313,0.0669,0.3556,0.4861,0.4645,0.4113,0.6773,0.6155,,
+ravdess,3,0.5513,0.5359,0.0452,0.5769,0.2945,0.2579,0.7033,0.7011,0.3471,0.5696,0.3035
+savee,3,0.5905,0.5659,0.0227,0.5810,0.1536,0.1062,0.7500,0.4040,0.2649,0.4640,0.1337
+tess,3,0.4579,0.4084,0.0350,0.4579,0.3740,0.3148,0.6411,0.4865,0.4127,0.5346,0.1581
