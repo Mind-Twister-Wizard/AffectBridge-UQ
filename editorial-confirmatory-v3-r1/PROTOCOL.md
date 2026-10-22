@@ -13,6 +13,6 @@
 
 ## Software provenance and honest reproduction boundary
 
-The local corrected experiment was run using pinned upstream commit `6c043d12e40afce2790e8f11ad67a52153ad20ac` together with the v3-r1 editorial patch, not unmodified top-level v2 scripts. The source patch, configurations and full per-run artifacts are retained separately by the authors and can be provided for editorial verification. The summaries committed here reflect the audited local output, but **this folder alone is not yet an independently executable reproduction of the confirmatory evaluation**.
+The local corrected experiment was run using pinned upstream commit `6c043d12e40afce2790e8f11ad67a52153ad20ac` together with the v3-r1 editorial patch, not unmodified top-level v2 scripts. The exact model-changing patch and the Windows reproduction entry point are now published in [source/](source/README.md). The full per-run checkpoints and path-bearing artifacts are retained by the authors. Public code plus aggregate summaries do not constitute an independently completed 42-run replication, but reviewers can inspect and reproduce the experimental procedure with permitted datasets and supported hardware.
 
 No licensed raw audio or large model checkpoints are included. Do not run `setup_and_run.bat` and cite its outputs as the corrected v3-r1 study without installing and verifying the protocol patch.

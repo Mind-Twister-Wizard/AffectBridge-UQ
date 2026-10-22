@@ -23,4 +23,8 @@ Across the four targets, **unweighted mean macro-F1 = 0.4604**. All set coverage
 - [Exact experimental protocol and code status](PROTOCOL.md)
 - [Dataset duplicate and label-conflict audit](DATA_AUDIT.md)
 
-**Release boundary:** These small text artifacts are public. The complete per-utterance predictions, 42 checkpoints, local v3-r1 source patch, signed configuration digests, and corresponding audit material are retained by the authors rather than silently being represented by the historical v2 directory. Follow corpus licenses when downloading source data.
+**Release boundary:** These small text artifacts are public. The **v3-r1 model-changing source patch and reproducibility launcher are now public** in [source/](source/README.md). The full per-utterance predictions, 42 large checkpoints, and private path-bearing run artifacts remain with the authors and are not silently represented by the historical v2 directory. Follow corpus licenses when downloading source data.
+
+## Exact public source release
+
+The [confirmatory source directory](source/README.md) publishes the scientific patch, separated train/selection/calibration split implementation, one-click Windows entry point, result validator, and source-level tests. See the source README for environment and execution instructions. The user's completed experiment results do not have to be rerun to inspect this source.

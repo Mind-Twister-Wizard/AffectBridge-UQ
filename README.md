@@ -23,6 +23,14 @@
 
 ---
 
+## Public confirmatory v3-r1 source code
+
+**The model-changing patch is publicly archived** in [`editorial-confirmatory-v3-r1/source/`](editorial-confirmatory-v3-r1/source/README.md), alongside a Windows launcher, independent source-calibration partitioning, seed-level validation, and synthetic split tests. It is applied against the pinned upstream source snapshot `6c043d12e40afce2790e8f11ad67a52153ad20ac` and therefore does not confuse the new scientific results with historical v2 code. The full audio datasets, WavLM weights, GPU checkpoints and some individual-run artifacts are not redistributed, owing to size/licensing and scope.
+
+**Reproduction:** Use the linked `source/RUN_FINAL_EXPERIMENT.bat` from a new directory, not the historical top-level v2 `setup_and_run.bat`. See [public-source README](editorial-confirmatory-v3-r1/source/README.md) before running. Code publication is not a claim of independent 42-run GPU replication.
+
+---
+
 ## Editorial confirmatory v3-r1 evidence (October 2026)
 
 The revised book-chapter manuscript is based on a **new, corrected evaluation**, which is **not** the v2 development run displayed in the historical [results/](results/README.md) folder. The corrected local experiments used SHA-256-deduplicated source data, independent source model-selection and calibration subsets, four leave-one-corpus-out targets, and seeds 42/52/62. The authors' audited run records contain **12 full-model and 30 paired-ablation runs**.
